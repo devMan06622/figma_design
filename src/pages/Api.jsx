@@ -43,7 +43,7 @@ export default function Api() {
             <Stack sx={{ px:{md:'49px',xs:'10px'},pt:{md:'42px',xs:'0px'}, pb:{md:'42px',xs:'24px'}, borderRadius: "28px", backgroundImage: { md: `url(${cardbg})`, sm: `url(${cardbg})`, xs: `url(${cardbgmobile})` }, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", width: "100%", height: "100%" ,position:'relative'}}>
               <Grid container alignItems="center" direction={{ md: "row", sm: "column", xs: "column" }}>
                 <Grid item size={{ md: 4, xs: 12 }}>
-                  <Box component="img" src={card} alt="Check Blockchain Address" sx={{ width: { md: '50%', xs: '100%' }, backgroundColor: '#2a20171f', position: {md:'absolute',xs:'none'},top:{md:'-117px',xs:'none'},left:{md:'-84px',xs:'none'} }} />
+                  <Box component="img" src={card} alt="Check Blockchain Address" sx={{ width: {lg:'80%',md:'100%',xs:'100%'},  padding:{md:'0px',sm:'100px',xs:'50px'}}} />
                 </Grid>
                 <Grid item size={{ md: 8, xs: 12 }} sx={{textAlign:{md:'left',xs:'center'}}}>
                   <Chip label="Risk Score API" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '24px', xs: '16px' } }} />

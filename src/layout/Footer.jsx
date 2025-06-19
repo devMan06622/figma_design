@@ -12,7 +12,7 @@ export default function Footer() {
       display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
       backgroundImage: `url(${bg})`,
       backgroundSize: "cover",
-      backgroundPosition: "center",
+      backgroundPosition: {lg:'unset',md:'center',xs:'center'},
       backgroundRepeat: "no-repeat",
     }}>
       <Box sx={{ px: { xs: '25px', md: '69px' }, py: { xs: '48px', md: '68px' }, color: 'white' }}>

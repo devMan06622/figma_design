@@ -67,7 +67,7 @@ export default function Btrace() {
         <Chip label="Btrace" sx={{ bgcolor: '#23222a', color: '#bdbdbd', width: '101px', color: 'white', height: '38px', borderRadius: '51px', p: '10px', fontSize: '14px', mb: '26px' }} />
         <Box sx={{ pt: 2 }}>
           <Stack alignItems="center">
-            <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h4" fontWeight="bold" align="center" sx={{ mb: '35px' }}>
+            <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h4" fontWeight="bold" align="center" sx={{ mb: '35px', maxWidth: '915px' }}>
               Checking A Crypto Wallet For  Connection With <Box component="span" color="#767676">“Dirty”</Box> Money Will Allow
             </Typography>
             <Stack direction="row" sx={{ mb: '84px' }}>
@@ -113,12 +113,12 @@ export default function Btrace() {
           </Stack>
         </Box>
 
-        <Box sx={{ mb: 8, width: '90%' }}>
+        <Box sx={{ mb: 8, width: '100%', maxWidth: '1021px' }}>
           <Stack spacing={2} sx={{ mb: '20px', textAlign: 'center', alignItems: 'center' }}>
             <Typography fontSize={{ md: "45px", xs: "32px" }} fontWeight="bold" align="center" sx={{ maxWidth: { md: '330px', xs: '300px' } }}>Check Crypto  Wallet <Box component="span" color="#bdbdbd">Free</Box></Typography>
             <Typography align="center" color="#bdbdbd" sx={{ maxWidth: '480px' }}>Works with Ethereum, BSC, Bitcoin, Tron, Everscale, Venom  (soon)</Typography>
           </Stack>
-          <Box sx={{ p: '10px', borderRadius: '100px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+          <Box sx={{mx:'10px', p: '10px', borderRadius: '100px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '100px', p: 2, boxShadow: 3 }}>
               <TextField
                 fullWidth

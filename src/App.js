@@ -27,7 +27,7 @@ function App() {
             <Route path="/About" element={<About />} />
             <Route path="/Contact" element={<ContactUs />} />
             <Route path="/Btrace" element={<Btrace />} />
-            <Route path="/Api" element={<Api />} />
+            <Route path="/Riskscore" element={<Api />} />
           </Routes>
         </Box>
         <Footer />

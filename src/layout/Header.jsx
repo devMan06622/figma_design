@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as React from 'react';
 import { AppBar, Box, Button, Stack, } from '@mui/material';
 import logo from '../assets/logo.svg';
@@ -15,58 +15,64 @@ import ListDivider from '@mui/joy/ListDivider';
 
 
 export default function Header() {
+  const location = useLocation();
+
+  const MenuItems = [
+    {
+      label: 'Our Product',
+      link: '/OurProduct'
+    },
+    {
+      label: 'Academy',
+      link: '/Academy'
+    },
+    {
+      label: 'About',
+      link: '/About'
+    },
+    {
+      label: 'Contact',
+      link: '/Contact'
+    },
+    {
+      label: 'Bholder',
+      link: '/Bholder'
+    },
+    {
+      label: 'Btrace',
+      link: '/Btrace'
+    },
+    {
+      label: 'Riskscore',
+      link: '/Riskscore'
+    }
+  ]
+
   const customButtonStyle = { color: '#ffffff94', textTransform: 'none', ":hover": { color: "white" } }
+  const ourProductButtonStyle = { color: 'white', textTransform: 'none', ":hover": { color: "white" } }
+  const menuButtonStyle = { color: '#ffffff94', textTransform: 'none', ":hover": { color: "black" } }
+  const ourProductMenuButtonStyle = { color: 'white', textTransform: 'none', ":hover": { color: "black" } }
+  
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', }}   >
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ width: '100%', px: { md: '72px', xs: '18px' }, pt: { md: '62px', xs: '31px' } }}>
 
         <Stack direction="row" alignItems="center" spacing={1.5}>
           <Dropdown>
-            <MenuButton sx={{ border: 'none', p: 0 }}>
+            <MenuButton sx={{ border: 'none', p: 0 ,":hover": { backgroundColor: "transparent" } }}>
               <Box component="img" src={menu} alt="menu" sx={{ cursor: 'pointer', display: { xs: 'block', md: 'none' } }} />
             </MenuButton>
-            <Menu sx={{ backgroundImage: `url(${inputbg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", border: 'none', color: 'white', borderRadius: "10px", boxShadow: '0px 0px 7pxrgba(24, 23, 23, 0.82)' }}>
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/OurProduct" sx={customButtonStyle}>
-                  Our Product
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/Academy" sx={customButtonStyle}>
-                  Academy
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/About" sx={customButtonStyle}>
-                  About
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/Contact" sx={customButtonStyle}>
-                  Contact
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/Bholder" sx={customButtonStyle}>
-                  Bholder
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/Btrace" sx={customButtonStyle}>
-                  Btrace
-                </Button>
-              </MenuItem>
-              <ListDivider />
-              <MenuItem>
-                <Button color="inherit" component={Link} to="/Api" sx={customButtonStyle}>
-                  Riskscore
-                </Button>
-              </MenuItem>
+            <Menu sx={{width:'100%', backgroundImage: `url(${inputbg})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", border: 'none', color: 'white', borderRadius: "10px", boxShadow: '0px 0px 7pxrgba(24, 23, 23, 0.82)' }}>
+              {MenuItems.map((item, index) => (
+                <>
+                  <MenuItem sx={{pl:'30px'}} key={index}>
+                    <Button color="inherit" component={Link} to={item.link} sx={location.pathname === item.link  ? ourProductMenuButtonStyle : menuButtonStyle}>
+                      {item.label}
+                    </Button>
+                  </MenuItem>
+                  {index < MenuItems.length - 1 && <ListDivider/>}
+                </>
+              ))}
             </Menu>
           </Dropdown>
           <Stack component={Link} to="/OurProduct">
@@ -75,28 +81,11 @@ export default function Header() {
         </Stack>
 
         <Stack direction="row" alignItems="center" display={{ xs: 'none', sm: 'none', md: 'flex' }} spacing={0}>
-
-          <Button color="inherit" component={Link} to="/OurProduct" sx={customButtonStyle}>
-            Our Product
-          </Button>
-          <Button color="inherit" component={Link} to="/Academy" sx={customButtonStyle}>
-            Academy
-          </Button>
-          <Button color="inherit" component={Link} to="/About" sx={customButtonStyle}>
-            About
-          </Button>
-          <Button color="inherit" component={Link} to="/Contact" sx={customButtonStyle}>
-            Contact
-          </Button>
-          <Button color="inherit" component={Link} to="/Bholder" sx={customButtonStyle}>
-            Bholder
-          </Button>
-          <Button color="inherit" component={Link} to="/Btrace" sx={customButtonStyle}>
-            Btrace
-          </Button>
-          <Button color="inherit" component={Link} to="/Api" sx={customButtonStyle}>
-            Riskscore
-          </Button>
+          {MenuItems.map((item, index) => (
+            <Button key={index} color="inherit" component={Link} to={item.link} sx={location.pathname === item.link ? ourProductButtonStyle : customButtonStyle}>
+              {item.label}
+            </Button>
+          ))}
         </Stack>
 
         <Stack direction="row" alignItems="center" spacing={1}>
