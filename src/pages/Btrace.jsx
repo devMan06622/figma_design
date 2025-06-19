@@ -119,7 +119,7 @@ export default function Btrace() {
             <Typography fontSize={{ md: "45px", xs: "32px" }} fontWeight="bold" align="center" sx={{ maxWidth: { md: '330px', xs: '300px' } }}>Check Crypto  Wallet <Box component="span" color="#bdbdbd">Free</Box></Typography>
             <Typography align="center" color="#bdbdbd" sx={{ maxWidth: '480px' }}>Works with Ethereum, BSC, Bitcoin, Tron, Everscale, Venom  (soon)</Typography>
           </Stack>
-          <Box sx={{ maxWidth: '1001px', p: '10px', borderRadius: '100px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+          <Box sx={{ p: '10px', borderRadius: '100px', backgroundImage: `url(${searchbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', backgroundImage: `url(${questionbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', borderRadius: '100px', p: 2, boxShadow: 3 }}>
               <TextField
                 fullWidth

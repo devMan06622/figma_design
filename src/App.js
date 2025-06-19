@@ -18,7 +18,7 @@ function App() {
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <Header />
-        <Box sx={{ px: { lg: '40px', md: '20px', xs: '0'}, color: 'white' ,minHeight: '50vh',pt:{md:9,xs:8} }}>
+        <Box sx={{ px: { lg: '101px', md: '20px', xs: '0'}, color: 'white' ,minHeight: '50vh',pt:{md:9,xs:8} }}>
           <Routes>
           <Route index element={<OurProduct />} />
             <Route path="/Bholder" element={<Bholder />} />

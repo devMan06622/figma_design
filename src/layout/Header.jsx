@@ -15,7 +15,7 @@ import ListDivider from '@mui/joy/ListDivider';
 
 
 export default function Header() {
-  const customButtonStyle = { color: 'white', textTransform: 'none', ":hover": { backgroundColor: "white", color: "black" } }
+  const customButtonStyle = { color: 'white', textTransform: 'none', ":hover": {color: "#818181" } }
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', }}   >
       {/* <Toolbar> */}

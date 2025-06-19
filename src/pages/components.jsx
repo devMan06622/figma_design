@@ -42,6 +42,8 @@ export const globalstyle = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
+    height:'95%',
+    width:'95%'
   }
 }
 export const bholderstyle = {
@@ -78,6 +80,8 @@ export const companystyle = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
+    height:'95%',
+    width:'95%'
   }
 }
 
@@ -96,12 +100,12 @@ const companydata = [
 
 export const globalData = [
   {
-    title: 'Proprietary     Technology',
+    title: 'Propriry Technology',
     content: 'We rely solely on our in-house technologies and solutions, ensuring full control, independence, and innovation without third-party dependencies.'
   },
   {
     title: 'Global Compliance & Localization',
-    content: 'We adapt our services to local legal frameworks and market specifics, enabling smooth operations with clients and partners across the globe.'
+    content: 'We adapt our services and market specifics, enabling smooth operations with clients and partners across the globe.'
   },
   {
     title: 'Trusted By      Institutions',
@@ -159,6 +163,10 @@ export const blockchainstyle = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
+    cursor: 'pointer',
+    width:"377px",
+    height:"502px",
+    m:'10px'
   }
 }
 export const blockchainData = [
@@ -254,8 +262,7 @@ export function Company() {
         {companydata.map((data, index) => (
           <Grid key={index} item size={6} justifyContent="center" sx={{ width: { md: "48%", xs: "100%" } }}>
             <Box sx={{
-              backgroundImage: `url(${hovergroupbgaction})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": {
-                p: '10px', transition: '0.2s', cursor: 'pointer', "Button": {
+              backgroundImage: `url(${hovergroupbgaction})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px',alignItems:'center',justifyContent:'center', ":hover": {display:'flex', transition: '0.2s', cursor: 'pointer', "Button": {
                   background: "linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)",
                   color: 'white',
                 }
@@ -293,7 +300,7 @@ export function Global(props) {
       <Grid container spacing={2} justifyContent="center" alignItems="stretch" direction={{ md: "row", sm: "column", xs: "column" }}>
         {slides.map((item, index) => (
           <Grid key={index} size={4} md={4}>
-            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '10px', transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px', height: '100%' }}>
+            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px',alignItems:'center',justifyContent:'center',display:'flex', ":hover": {  transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px', height: '100%' }}>
               <Box sx={globalstyle}>
                 <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%', mb: '95px' }} />
                 <Box sx={{ textAlign: 'left' }}>
@@ -316,7 +323,7 @@ export function BholderCard() {
       <Grid container spacing={2} justifyContent="center" alignItems="stretch" direction={{ md: "row", sm: "column", xs: "column" }}>
         {bholdercardData.map((item, index) => (
           <Grid key={index} size={{ lg: 4, md: 6 }}>
-            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '10px', transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px' }}>
+            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px' }}>
               <Box sx={globalstyle}>
                 <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
                 <Typography variant="h5" fontWeight="bold" gutterBottom>{item.title}</Typography>
@@ -331,27 +338,6 @@ export function BholderCard() {
     </>
   )
 }
-
-// export function IssuesCard() {
-//   return (
-//     <Grid container spacing={2} justifyContent="center" sx={{ mb: '100px' }} direction={{ md: "row", sm: "column", xs: "column" }}>
-//       {cardData.map((item, index) => (
-//         <Grid key={index} size={{ lg: 4, md: 4, sm: 6, xs: 12 }} >
-//           <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '10px', transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px' }}>
-//             <Box sx={globalstyle}>
-//               <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
-//               <Typography variant="h5" fontWeight="bold" gutterBottom>{item.title}</Typography>
-//               <Typography color="#bdbdbd">
-//                 {item.content}
-//               </Typography>
-//             </Box>
-//           </Box>
-//         </Grid>
-//       ))}
-//     </Grid>
-//   )
-// }
-
 export function Blockchain(props) {
   const { slides, options } = props
 
@@ -359,7 +345,7 @@ export function Blockchain(props) {
     <>
       <Stack direction={{ md: "row", sm: "column" }} spacing={2} justifyContent="center" alignItems="center">
         {slides.map((data, index) => (
-          <Box key={index} sx={{ backgroundImage: `url(${hovercardbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '10px', transition: '0.2s', cursor: 'pointer' }, borderRadius: '28px',textDecoration: 'none' }} component={Link} to={`/${data.LinkName}`}>
+          <Box key={index} sx={{ backgroundImage: `url(${hovercardbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', borderRadius: '28px',textDecoration: 'none',width:'397px',height:'522px' }} component={Link} to={`/${data.LinkName}`}>
             <Box key={index} sx={blockchainstyle}>
               <Box sx={{ px: { md: "15px", sm: "90px", xs: "55px" } }}>
                 <Box component="img" src={data.img} sx={cardstyle} alt="icon" />

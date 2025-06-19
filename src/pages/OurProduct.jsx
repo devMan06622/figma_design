@@ -15,6 +15,7 @@ import productCardBg from '../assets/product/productbg.svg';
 import cardGroup from '../assets/product/cardGroup.svg';
 import cardProduct from '../assets/product/cardProduct.svg';
 import productcardbgmobile from '../assets/product/productcardbgmobile.svg';
+import download from '../assets/shine/download.png'
 
 const OPTIONS = { loop: true }
 const SLIDES = blockchainData;
@@ -57,27 +58,27 @@ const addressdata = [
 ]
 export default function OurProduct() {
 
-
   return (
     <Stack alignItems="center" justifyContent={'center'}>
       <Stack>
         <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
       </Stack>
-      <Box sx={{ color: "white", mb: '21px', width: { md: '724px', sm: '624px', xs: '328px' }, textAlign: 'center' }} >
+      <Box sx={{zIndex:10, color: "white", mb: '21px', width: { md: '724px', sm: '624px', xs: '328px' }, textAlign: 'center' }} >
         <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" gutterBottom>
           Check Your Crypto Walet-Protect <Box component="span" color="#bdbdbd">Your</Box> Funds!
         </Typography>
-        <Typography sx={{ color: "white", paddingTop: "10px", fontSize: {md:'16px',xs:'14 px'} }} variant="subtitle1" gutterBottom>
+        <Typography sx={{ color: "white", paddingTop: "10px", fontSize: { md: '16px', xs: '14 px' } }} variant="subtitle1" gutterBottom>
           Chain Security is a technology company, speakers at leading industry exhibitions
           <br /> on blockchain technologies, big data and information security, investigations of
           <br />crypto fraud cases around the world.
         </Typography>
       </Box>
+      <Box component="img" sx={{zIndex:0, position: 'absolute', top:{md:'233px',sm:'153px',xs:'63px'}, left: '0', width: '100%', height: '100%' }} src={download} alt="download" />
       <Box sx={{ position: "relative", width: '100%', display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Box sx={{ display: { md: 'block',sm:'block', xs: 'none' }, px:'20px' , paddingTop: {md:'112px',sm:'86px'}}}>
+        <Box sx={{ display: { md: 'block', sm: 'block', xs: 'none' }, px: '20px', paddingTop: { md: '112px', sm: '86px' } }}>
           <img style={{ width: "100%" }} src={productCardBg} alt="productCardBg" />
         </Box>
-        <Box sx={{ display: { md: 'none',sm:'none', xs: 'block' } }}>
+        <Box sx={{ display: { md: 'none', sm: 'none', xs: 'block' } }}>
           <img style={{ width: "100%", paddingTop: "15px" }} src={productcardbgmobile} alt="productcardbgmobile" />
         </Box>
         <Box sx={{ position: 'absolute', top: { md: '80px', sm: '50px', xs: '180px' }, left: { md: 0, sm: 0, xs: 0 }, right: { md: '245px', sm: 0, xs: 0 } }}>
@@ -92,7 +93,7 @@ export default function OurProduct() {
           </Box>
         </Box>
       </Box>
-      <Box align="center" sx={{ width: { md: '684px', sm: '580px', xs: '328px' }, color: "white", marginTop: {md:'120px',xs:'150px'}, textAlign: 'center' }} >
+      <Box align="center" sx={{ width: { md: '684px', sm: '580px', xs: '328px' }, color: "white", marginTop: { md: '120px', xs: '150px' }, textAlign: 'center' }} >
         <Typography fontSize={{ md: "45px", xs: "32px" }} gutterBottom>
           <Box component="span" color="#767676"> Chainsecurity </Box> Tools Make  Blockchain Safer
         </Typography>
@@ -142,7 +143,7 @@ export default function OurProduct() {
           </Box>
           <Company />
           {/* Bottom Section */}
-          <Box textAlign="center" mb={{md:'186px',xs:'120px'}}>
+          <Box textAlign="center" mb={{ md: '186px', xs: '120px' }}>
           </Box>
           <Box sx={{ mb: '43px' }}>
             <Stack alignItems="center" spacing={2} sx={{ mb: '40px' }}>
