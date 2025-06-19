@@ -18,7 +18,6 @@ export default function Header() {
   const customButtonStyle = { color: '#ffffff94', textTransform: 'none', ":hover": { color: "white" } }
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', }}   >
-      {/* <Toolbar> */}
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ width: '100%', px: { md: '72px', xs: '18px' }, pt: { md: '62px', xs: '31px' } }}>
 
         <Stack direction="row" alignItems="center" spacing={1.5}>

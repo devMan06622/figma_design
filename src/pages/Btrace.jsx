@@ -113,7 +113,6 @@ export default function Btrace() {
           </Stack>
         </Box>
 
-        {/* Check Crypto Wallet Free Section */}
         <Box sx={{ mb: 8, width: '90%' }}>
           <Stack spacing={2} sx={{ mb: '20px', textAlign: 'center', alignItems: 'center' }}>
             <Typography fontSize={{ md: "45px", xs: "32px" }} fontWeight="bold" align="center" sx={{ maxWidth: { md: '330px', xs: '300px' } }}>Check Crypto  Wallet <Box component="span" color="#bdbdbd">Free</Box></Typography>
