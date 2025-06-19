@@ -25,13 +25,14 @@
 
 @media screen and (max-width: 876px) {
   .embla {
-    max-width: 37rem;    
+    max-width: 37rem;
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 60%;
   }
 }
+
 @media screen and (max-width: 430px) {
   .embla {
     max-width: 390px;
@@ -40,6 +41,7 @@
     --slide-size: 83%;
   }
 }
+
 @media screen and (max-width: 376px) {
   .embla {
     max-width: 325px;
@@ -48,6 +50,7 @@
     --slide-size: 100%;
   }
 }
+
 .GlobalCss {
   max-width: 48rem;
   margin: auto;
@@ -75,13 +78,14 @@
 
 @media screen and (max-width: 876px) {
   .GlobalCss {
-    max-width: 34rem;    
+    max-width: 34rem;
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 60%;
   }
 }
+
 @media screen and (max-width: 590px) {
   .GlobalCss {
     max-width: 390px;
@@ -90,6 +94,7 @@
     --slide-size: 83%;
   }
 }
+
 @media screen and (max-width: 376px) {
   .GlobalCss {
     max-width: 325px;
@@ -100,3 +105,58 @@
 }
 
 
+.bg_img {
+  position: absolute;
+  top: 134px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 2000px) {
+  .bg_img {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .bg_img {
+    position: absolute;
+    top: 225px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .bg_img {
+    position: absolute;
+    top: 261px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg_img {
+    position: absolute;
+    top: 196px;
+    left: 0;
+    width: 100%;
+    height: 87%;
+  }
+}
+
+@media screen and (max-width: 566px) {
+  .bg_img {
+    position: absolute;
+    top: 221px;
+    left: 0;
+    width: 100%;
+    height: 87%;
+  }
+}

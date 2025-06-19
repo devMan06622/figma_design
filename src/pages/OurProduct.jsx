@@ -16,6 +16,7 @@ import cardGroup from '../assets/product/cardGroup.svg';
 import cardProduct from '../assets/product/cardProduct.svg';
 import productcardbgmobile from '../assets/product/productcardbgmobile.svg';
 import download from '../assets/shine/download.png'
+import hovergroupbg from '../assets/hover/hovergroupbg.svg';
 
 const OPTIONS = { loop: true }
 const SLIDES = blockchainData;
@@ -61,9 +62,9 @@ export default function OurProduct() {
   return (
     <Stack alignItems="center" justifyContent={'center'}>
       <Stack>
-        <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
+        <Chip label="Chain Security" sx={{ zIndex: 10, bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
       </Stack>
-      <Box sx={{zIndex:10, color: "white", mb: '21px', width: { md: '724px', sm: '624px', xs: '328px' }, textAlign: 'center' }} >
+      <Box sx={{ zIndex: 10, color: "white", mb: '21px', width: { md: '724px', sm: '624px', xs: '328px' }, textAlign: 'center' }} >
         <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" gutterBottom>
           Check Your Crypto Walet-Protect <Box component="span" color="#bdbdbd">Your</Box> Funds!
         </Typography>
@@ -73,9 +74,9 @@ export default function OurProduct() {
           <br />crypto fraud cases around the world.
         </Typography>
       </Box>
-      <Box component="img" sx={{zIndex:0, position: 'absolute', top:{md:'233px',sm:'153px',xs:'63px'}, left: '0', width: '100%', height: '100%' }} src={download} alt="download" />
+      <img className='bg_img' src={download} alt="download" />
       <Box sx={{ position: "relative", width: '100%', display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Box sx={{ display: { md: 'block', sm: 'block', xs: 'none' }, px: '20px', paddingTop: { md: '112px', sm: '86px' } }}>
+        <Box sx={{ display: { position: 'relative', md: 'block', sm: 'block', xs: 'none' }, px: '20px', paddingTop: { md: '90px', sm: '86px' } }}>
           <img style={{ width: "100%" }} src={productCardBg} alt="productCardBg" />
         </Box>
         <Box sx={{ display: { md: 'none', sm: 'none', xs: 'block' } }}>
@@ -122,15 +123,29 @@ export default function OurProduct() {
       <Stack p={2} spacing={2} justifyContent="center" alignItems="center" sx={{ mb: { md: '47px', sm: '20px', xs: '0px' } }}>
         <Grid direction={{ md: "row", sm: "column", xs: "column" }} container spacing={{ md: 2, xs: 1 }} sx={{ margin: '100px' }}>
           {chainsecuritydata.map((item, index) => (
-            <Grid key={index} item size={{ md: 6, sm: 12, xs: 12 }}>
-              <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '7px', transition: '0.2s', cursor: 'pointer', "img": { backgroundColor: '#FF8629', transition: '0.2s' } }, borderRadius: '29px' }}>
-                <Card sx={moneycardstyle}>
-                  <Stack direction="row" alignItems="center" spacing={2}>
-                    <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
-                    <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
-                  </Stack>
-                </Card>
+            <Grid key={index} item size={{ md: 6, sm: 12, xs: 12 }} sx={{
+              position: 'relative',
+              ":hover": {
+                ".moneycardstyle": {
+                  px: '17px', py: { md: '26px', xs: '11px' },
+                  backgroundImage: `url(${hovergroupbg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  cursor: 'pointer',
+                  "img": { backgroundColor: '#FF8629' }
+                },
+                p: '7px',
+              }
+            }}>
+              <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', borderRadius: '29px', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
               </Box>
+              <Card sx={moneycardstyle} className='moneycardstyle'>
+                <Stack direction="row" alignItems="center" spacing={2}>
+                  <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
+                  <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
+                </Stack>
+              </Card>
             </Grid>
           ))}
         </Grid>

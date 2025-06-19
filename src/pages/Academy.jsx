@@ -5,6 +5,7 @@ import image0 from '../assets/Academy/image0.svg';
 import image1 from '../assets/Academy/image1.svg';
 import image2 from '../assets/Academy/image2.svg';
 import image3 from '../assets/Academy/image3.svg';
+import download from '../assets/Academy/download.png';
 
 const cards = [
   {
@@ -40,7 +41,7 @@ export default function Academy() {
       <Stack>
         <Chip label="Chain Security" sx={{ bgcolor: '#23222a', color: '#bdbdbd', px: '5px', py: '20px', fontSize: '14px', mb: { md: '33px', xs: '18px' } }} />
       </Stack>
-      <Container sx={{ textAlign: 'center', mb: 6,maxWidth:{md:'606px',xs:'300px'} }}>
+      <Container sx={{ textAlign: 'center', mb: 6, maxWidth: { md: '606px', xs: '300px' } }}>
         <Typography fontSize={{ md: "45px", xs: "32px" }} variant="h3" fontWeight="bold" gutterBottom sx={{ mb: '22px' }}>
           Chain <Box component="span" color="#bdbdbd">Security</Box> Academy
         </Typography>
@@ -61,13 +62,13 @@ export default function Academy() {
                     opacity: 1,
                     transition: 'all 1s ease',
                   },
-                  'img': {
-                    opacity: 0.5,
-                    transition: 'all 1s ease',
+                  '.download_bg': {
+                    display: 'block'
                   },
                 }
               }}>
                 <Box sx={{ position: 'relative', paddingTop: '60%' }}> {/* 50% creates a 2:1 aspect ratio */}
+                  <Box className='download_bg' sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1, filter: 'blur(1px)', opacity: 0.5, background: `url(${download}) repeat`, display: 'none' }}></Box>
                   <Box
                     component="img"
                     src={card.image}
@@ -86,7 +87,7 @@ export default function Academy() {
                     position: 'absolute',
                     top: { md: '25%', sm: '36%', xs: '25%' },
                     left: { md: '25%', sm: '36%', xs: '25%' },
-                    opacity: 0
+                    opacity: 0, zIndex: 2
                   }}>
                     <Button variant="outlined" sx={{ bgcolor: 'white', color: 'black', fontSize: '14px', fontWeight: 'bold', textTransform: 'none', borderRadius: '30px', px: '34px', py: '12px' }}>Read More</Button>
                   </CardContent>

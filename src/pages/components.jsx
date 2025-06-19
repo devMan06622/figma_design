@@ -18,8 +18,8 @@ import hovergroup2action from '../assets/hover/hovergroup2action.svg';
 import Groupbg from '../assets/Groupbg.svg';
 import icon from '../assets/btrace/icon.svg';
 import hoverchain from '../assets/hover/hoverchain.svg';
-import hovergroupbg from '../assets/hover/hovergroupbg.svg';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import hovergroupbg from '../assets/hover/hovergroupbg.svg';
 
 import hovercardbg from '../assets/hover/hovercardbg.svg';
 
@@ -42,8 +42,8 @@ export const globalstyle = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
-    height:'95%',
-    width:'95%'
+    height: '95%',
+    width: '95%'
   }
 }
 export const bholderstyle = {
@@ -80,8 +80,8 @@ export const companystyle = {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
-    height:'95%',
-    width:'95%'
+    height: '95%',
+    width: '95%'
   }
 }
 
@@ -164,9 +164,9 @@ export const blockchainstyle = {
     backgroundRepeat: 'no-repeat',
     transition: '0.2s',
     cursor: 'pointer',
-    width:"377px",
-    height:"502px",
-    m:'10px'
+    width: "377px",
+    height: "502px",
+    m: '10px'
   }
 }
 export const blockchainData = [
@@ -190,24 +190,28 @@ export const blockchainData = [
   }
 ]
 export const moneycardstyle = {
+  position: 'relative',
+  zIndex: 10,
+  color: 'white',
+  height: '100%',
+  boxShadow: 5,
+  width: { md: "100%" },
   backgroundColor: 'transparent !important',
   backgroundImage: `url(${Groupbg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  color: 'white',
-  height: '100%',
-  px: '24px', py: { md: '33px', xs: '18px' }, boxShadow: 5,
-  width: { md: "100%" },
+  px: '24px', py: { md: '33px', xs: '18px' },
   borderRadius: '20px',
-  ":hover": {
-    backgroundImage: `url(${hovergroupbg})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    transition: '0.2s',
-    cursor: 'pointer'
-  }
+  // ":hover": {
+  //   backgroundImage: `url(${hovergroupbg})`,
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  //   backgroundRepeat: 'no-repeat',
+  //   transition: '0.2s',
+  //   cursor: 'pointer',
+  //   "img": { backgroundColor: '#FF8629', transition: '0.2s' }
+  // }
 }
 
 export const moneycarddata = [
@@ -262,7 +266,8 @@ export function Company() {
         {companydata.map((data, index) => (
           <Grid key={index} item size={6} justifyContent="center" sx={{ width: { md: "48%", xs: "100%" } }}>
             <Box sx={{
-              backgroundImage: `url(${hovergroupbgaction})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px',alignItems:'center',justifyContent:'center', ":hover": {display:'flex', transition: '0.2s', cursor: 'pointer', "Button": {
+              backgroundImage: `url(${hovergroupbgaction})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', alignItems: 'center', justifyContent: 'center', ":hover": {
+                display: 'flex', transition: '0.2s', cursor: 'pointer', "Button": {
                   background: "linear-gradient(308.69deg, #FF8629 63.74%, #FFD729 92.78%)",
                   color: 'white',
                 }
@@ -300,7 +305,7 @@ export function Global(props) {
       <Grid container spacing={2} justifyContent="center" alignItems="stretch" direction={{ md: "row", sm: "column", xs: "column" }}>
         {slides.map((item, index) => (
           <Grid key={index} size={4} md={4}>
-            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px',alignItems:'center',justifyContent:'center',display:'flex', ":hover": {  transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px', height: '100%' }}>
+            <Box sx={{ backgroundImage: `url(${hovergroup2action})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', alignItems: 'center', justifyContent: 'center', display: 'flex', ":hover": { transition: '0.2s', cursor: 'pointer', 'img': { backgroundColor: '#FF8629' } }, borderRadius: '29px', height: '100%' }}>
               <Box sx={globalstyle}>
                 <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%', mb: '95px' }} />
                 <Box sx={{ textAlign: 'left' }}>
@@ -345,7 +350,7 @@ export function Blockchain(props) {
     <>
       <Stack direction={{ md: "row", sm: "column" }} spacing={2} justifyContent="center" alignItems="center">
         {slides.map((data, index) => (
-          <Box key={index} sx={{ backgroundImage: `url(${hovercardbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', borderRadius: '28px',textDecoration: 'none',width:'397px',height:'522px' }} component={Link} to={`/${data.LinkName}`}>
+          <Box key={index} sx={{ backgroundImage: `url(${hovercardbg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', borderRadius: '28px', textDecoration: 'none', width: '397px', height: '522px' }} component={Link} to={`/${data.LinkName}`}>
             <Box key={index} sx={blockchainstyle}>
               <Box sx={{ px: { md: "15px", sm: "90px", xs: "55px" } }}>
                 <Box component="img" src={data.img} sx={cardstyle} alt="icon" />
@@ -370,15 +375,29 @@ export function MoneyCard() {
     <Stack spacing={2}>
       <Grid justifyContent={'center'} sx={{ px: '20px' }} container spacing={2} direction={{ md: "row", sm: "row", xs: "column" }}>
         {moneycarddata.map((item, index) => (
-          <Grid key={index} item size={{ md: 4, sm: 6, xs: 12 }}>
-            <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', ":hover": { p: '7px', transition: '0.2s', cursor: 'pointer', "img": { backgroundColor: '#FF8629', transition: '0.2s' } }, borderRadius: '29px', height: '100%' }}>
-              <Card sx={moneycardstyle}>
-                <Stack direction="row" alignItems="center" spacing={2}>
-                  <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
-                  <Typography sx={{ marginLeft: '24px !important', size: '20px' }} variant="body1">{item.content}</Typography>
-                </Stack>
-              </Card>
+          <Grid key={index} item size={{ md: 4, sm: 6, xs: 12 }} sx={{
+            position: 'relative',
+            ":hover": {
+              ".moneycardstyle": {
+                px: '17px', py: { md: '26px', xs: '11px' },
+                backgroundImage: `url(${hovergroupbg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                cursor: 'pointer',
+                "img": { backgroundColor: '#FF8629' }
+              },
+              p: '7px',
+            }
+          }}>
+            <Box sx={{ backgroundImage: `url(${hoverchain})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', p: '0px', borderRadius: '29px', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
             </Box>
+            <Card sx={moneycardstyle} className='moneycardstyle'>
+              <Stack direction="row" alignItems="center" spacing={2}>
+                <Box component="img" src={icon} alt="icon" sx={{ p: '13px', backgroundColor: '#23222a', borderRadius: '50%' }} />
+                <Typography sx={{ size: '20px' }} variant="body1">{item.content}</Typography>
+              </Stack>
+            </Card>
           </Grid>
         ))}
       </Grid>

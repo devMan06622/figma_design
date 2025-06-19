@@ -15,7 +15,7 @@ import ListDivider from '@mui/joy/ListDivider';
 
 
 export default function Header() {
-  const customButtonStyle = { color: 'white', textTransform: 'none', ":hover": {color: "#818181" } }
+  const customButtonStyle = { color: '#ffffff94', textTransform: 'none', ":hover": { color: "white" } }
   return (
     <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', }}   >
       {/* <Toolbar> */}
@@ -50,6 +50,24 @@ export default function Header() {
                   Contact
                 </Button>
               </MenuItem>
+              <ListDivider />
+              <MenuItem>
+                <Button color="inherit" component={Link} to="/Bholder" sx={customButtonStyle}>
+                  Bholder
+                </Button>
+              </MenuItem>
+              <ListDivider />
+              <MenuItem>
+                <Button color="inherit" component={Link} to="/Btrace" sx={customButtonStyle}>
+                  Btrace
+                </Button>
+              </MenuItem>
+              <ListDivider />
+              <MenuItem>
+                <Button color="inherit" component={Link} to="/Api" sx={customButtonStyle}>
+                  Riskscore
+                </Button>
+              </MenuItem>
             </Menu>
           </Dropdown>
           <Stack component={Link} to="/OurProduct">
@@ -57,7 +75,7 @@ export default function Header() {
           </Stack>
         </Stack>
 
-        <Stack direction="row" alignItems="center" display={{ xs: 'none', md: 'flex' }} spacing={2}>
+        <Stack direction="row" alignItems="center" display={{ xs: 'none', sm: 'none', md: 'flex' }} spacing={0}>
 
           <Button color="inherit" component={Link} to="/OurProduct" sx={customButtonStyle}>
             Our Product
@@ -70,6 +88,15 @@ export default function Header() {
           </Button>
           <Button color="inherit" component={Link} to="/Contact" sx={customButtonStyle}>
             Contact
+          </Button>
+          <Button color="inherit" component={Link} to="/Bholder" sx={customButtonStyle}>
+            Bholder
+          </Button>
+          <Button color="inherit" component={Link} to="/Btrace" sx={customButtonStyle}>
+            Btrace
+          </Button>
+          <Button color="inherit" component={Link} to="/Api" sx={customButtonStyle}>
+            Riskscore
           </Button>
         </Stack>
 
